@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='utf-8'>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+          }
+        @font-face {
+        font-family: AirePro;
+        src: url(fonts/AireBoldPro.ttf);
+        }
+        body{
+            background-color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Выравнивание по горизонтали */
+             /* Для выравнивания элементов на всю высоту окна */
+            font-family: 'Montserrat', sans-serif;
+            color: #1D1C1A;
+        }
+        .companyname{
+            
+            font-family: "AirePro";
+            font-size: 20vw;
+            color: #1D1C1A;
+            justify-content: center;
+            display: flex;
+        }
+        .welcometxt{
+            margin-top: 5vh;
+            font-size: 6vw;
+            text-align: center;
+            width: 75vw;
+            
+        }
+        .content{
+            
+            z-index: 950 ;
+            position: absolute;
+            top: 30vh;
+            justify-content: center;
+            align-items: center;
+            width: 89.7vw;
+            
+            left: 50%;
+            transform: translate(-50%);
+            font-family: 'Montserrat';
+        }
+        input{
+            background-color: #ffffff00;
+            flex-direction: column;
+            border: #7B8F74 solid 0.25vw;
+            border-radius: 50vw;
+            font-size: 2vh;
+            font-family: "Montserrat";
+            font-weight: 300;
+            margin-top: 2vh;
+            color: #67645E;
+            width: 40vw;
+            height: 4vh;
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+        input::placeholder{
+            padding-left: 0vw;
+            border: none;
+        }
+        input:focus{
+            outline: none;
+            
+        }
+        .input_place{
+            margin-top: 2.5vh;
+            display:block;
+            justify-content: center;
+        }    
+        .input_place_description{
+            width: 100%;
+            padding: 4vw;
+            border-radius: 2vh;
+            margin-top: 2.5vh;
+            height: 20vh;
+            display:block;
+            font-family: Montserrat;
+            font-size: 2vh;
+        }  
+        textarea:focus{
+            outline: none;
+        } 
+        textarea::placeholder{
+            padding: 0.75vw;
+            border: none;
+        }
+        textarea{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .lessonsmoreconfirm{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 89.7vw;
+            
+            background-color: #7B8F74;
+            color: #ffffff;
+            border-radius: 50vw;
+            align-items: center;
+            border: none;
+            font-size: 5vw;
+            margin-top: 1.5vh;
+            font-family: Montserrat;
+        }
+        
+
+       
+
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 13vh;
+            background-color: #fff;
+            z-index: 999;
+            font-size: 3vw;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            backdrop-filter: blur(4px); 
+        }
+        a {
+            text-decoration: none;
+        }
+        .et-hero-tab {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            color: #67645E;
+            margin-top: 4vh;
+        }
+        .mainimg{
+            position: absolute;
+            height: 4vh;
+            margin-top: -7vh;
+            
+        } 
+        .describetxt{
+            margin-left: 5vw;
+            margin-top: 2vh;
+            margin-bottom: -1vh;
+            font-size: 5vw;
+        } 
+        .back_btn{
+            position: absolute;
+            z-index: 1000;
+            margin-top: 5vh;
+            left: 7.5vw;
+        }  
+
+        .loadedimg{
+            
+            margin-top: 5vw;
+            display: block;
+            width: 87.9vw;
+            height: 20vh;
+            border-radius: 5vw;
+            justify-content: center;
+        }
+        .loadedimgava{
+            margin-top: 5vw;
+            display: block;
+            width: 30vw;
+            height: 15vh;
+            border-radius: 5vw;
+            justify-content: center;
+        }
+
+        .checkbox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2vh;
+        margin-left: 0;
+        width: 87.9vw;
+        }
+        input[type=checkbox]:checked {
+            background-color:#7B8F74; 
+            color: #7B8F74;
+            border: #7B8F74;
+        } 
+        input[type=checkbox]{
+            margin: 5vw;
+            width: 5vh;
+            height: 4vh;
+            
+        }      
+        .loadinput[type="file"] {
+            color: transparent;
+            display: none;
+        }
+        label{
+            font-size: 4vw;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="welcometxt">
+        <div class="companyname">Insight
+
+        </div>Давайте добавим фото студии и решим кто вы </div>
+    <div class="back_btn" onclick="location.href='#'">
+        <img src="images/back_btn.svg" alt="back">
+    </div>
+    <div class="content">
+        <form id="myForm">
+            
+
+                <div class="describetxt">Аватарка студии</div>
+
+                <label for="photoava">
+                    <img class="loadedimgava" src="/images/#">
+                    <input class="loadinput" type="file" id="photoava" name="photo1">
+                </label>
+
+                <div class="describetxt">Превью для студии</div>
+
+                <label for="photopre">
+                    <img class="loadedimg" src="/images/#">
+                    <input class="loadinput" type="file" id="photopre" name="photo1">
+                </label>
+
+                
+
+                <div class="describetxt">Фотографии вашей студии</div>
+
+                <label for="photo1">
+                    <img class="loadedimg" src="/images/#">
+                    <input class="loadinput" type="file" id="photo1" name="photo1">
+                </label>
+                
+                <label for="photo2">
+                    <img class="loadedimg" src="/images/#">
+                     <input class="loadinput" type="file" id="photo2" name="photo2">
+                </label>
+                
+                <label for="photo3">
+                    <img class="loadedimg" src="/images/#">
+                    <input class="loadinput" type="file" id="photo3" name="photo3">
+                </label>
+                
+                <label for="photo4">
+                    <img class="loadedimg" src="/images/#">
+                     <input class="loadinput" type="file" id="photo4" name="photo4">
+                </label>
+                
+            
+
+        <div class="describetxt">Кто вы?</div>
+        <div class="checkbox">
+            <input type="checkbox" id="prostaya" name="taxSystem">
+            <label for="prostaya">Самозанятый</label>
+
+            <input type="checkbox" id="obshaya" name="taxSystem">
+            <label for="obshaya">ИП/ООО</label>
+        </div>
+        <input type="submit" class="lessonsmoreconfirm" value="Продолжить">
+    </form>
+       
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $('input[type="checkbox"][name="taxSystem"]').on('change', function() {
+            $('input[type="checkbox"][name="taxSystem"]').not(this).prop('checked', false);
+        });
+    });
+
+    function checkForm() {
+        var fileInputs = document.querySelectorAll('.loadinput');
+        var checkboxChecked = false;
+        var filesSelected = true;
+    
+        // Проверка загрузки файлов
+        fileInputs.forEach(function(fileInput) {
+            if (fileInput.value === '') {
+                filesSelected = false;
+                return;
+            }
+        });
+    
+        if (!filesSelected) {
+            alert('Пожалуйста, выберите файлы для всех полей!');
+            return false;
+        }
+    
+        // Проверка выбора чекбокса
+        var checkboxes = document.querySelectorAll('input[type="checkbox"][name="taxSystem"]');
+        checkboxes.forEach(function(checkbox) {
+            if (checkbox.checked) {
+                checkboxChecked = true;
+            }
+        });
+    
+        if (!checkboxChecked) {
+            alert('Пожалуйста, выберите один из вариантов чекбокса!');
+            return false;
+        }
+    
+        return true;
+    }
+    
+    document.getElementById('myForm').onsubmit = function(event){
+        event.preventDefault(); // Предотвращение отправки формы для проверки
+    
+        if (checkForm()) {
+            // Если все данные заполнены правильно, отправить форму
+            document.getElementById('myForm').submit();
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', function(){
+        const fileInputs = document.querySelectorAll('.loadinput');
+
+        fileInputs.forEach(function(fileInput) {
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = fileInput.previousElementSibling;
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    });
+</script>
+    
+</html>
+<!-- <label>
+    <img src="/build/assets/user-77605e7f.png">
+    <input class="load-input" type="file" wire:model.live="avatar">
+</label> -->

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='utf-8'>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+          }
+        @font-face {
+        font-family: AirePro;
+        src: url(fonts/AireBoldPro.ttf);
+        }
+        body{
+            background-color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Выравнивание по горизонтали */
+             /* Для выравнивания элементов на всю высоту окна */
+            font-family: 'Montserrat', sans-serif;
+            color: #1D1C1A;
+        }
+        .companyname{
+            
+            font-family: "AirePro";
+            font-size: 20vw;
+            color: #1D1C1A;
+            justify-content: center;
+            display: flex;
+        }
+        .welcometxt{
+            margin-top: 5vh;
+            font-size: 6vw;
+            text-align: center;
+            width: 65vw;
+            padding: 0 20px;
+        }
+        .content{
+            
+            z-index: 950 ;
+            position: absolute;
+            top: 30vh;
+            justify-content: center;
+            align-items: center;
+            width: 89.7vw;
+   
+            left: 50%;
+            transform: translate(-50%);
+            font-family: 'Montserrat';
+        }
+        input{
+            background-color: #ffffff00;
+            border: #7B8F74 solid 0.25vw;
+            border-radius: 50vw;
+            font-size: 2.5vh;
+            font-family: "Montserrat";
+            font-weight: 300;
+            color: #67645E;
+            width: 78.9vw;
+            height: 4vh;
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+        input::placeholder{
+            padding-left: 0vw;
+            border: none;
+        }
+        input:focus{
+            outline: none;
+            
+        }
+        .input_place{
+            margin-top: 2.5vh;
+            display:block;
+            justify-content: center;
+        }    
+        .input_place_description{
+            width: 100%;
+            padding: 4vw;
+            border-radius: 2vh;
+            margin-top: 2.5vh;
+            height: 20vh;
+            display:block;
+            font-family: Montserrat;
+            font-size: 2.5vh;
+        }  
+        textarea:focus{
+            outline: none;
+        } 
+        textarea::placeholder{
+            padding: 0.75vw;
+            border: none;
+        }
+        textarea{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .lessonsmoreconfirm{
+            display: flex;
+            justify-content: center;
+            
+            width: 89.7vw;
+            padding: 2vw 0vh;
+            background-color: #7B8F74;
+            color: #ffffff;
+            border-radius: 50vw;
+            align-items: center;
+            border: none;
+            font-size: 5vw;
+            margin-top: 1.5vh;
+            font-family: Montserrat;
+        }
+        .lessonsmoreconfirmtxt{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            font-weight: 400;
+           
+
+        }
+
+
+
+
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 13vh;
+            background-color: #fff;
+            z-index: 999;
+            font-size: 3vw;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            backdrop-filter: blur(4px); 
+        }
+        a {
+            text-decoration: none;
+        }
+        .et-hero-tab {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            color: #67645E;
+            margin-top: 4vh;
+        }
+        .mainimg{
+            position: absolute;
+            height: 4vh;
+            margin-top: -7vh;
+            
+        }            
+    </style>
+    
+</head>
+
+<body>
+    <div class="welcometxt">
+        <div class="companyname">Insight</div>
+        
+        Давайте создадим 
+            вашу студию </div>
+    
+    <div class="content">
+        
+        <div class="input_place">
+            <input   name=""  placeholder="Название студии" required/>
+        </div>
+        <div class="input_place">
+            <input  type="number" name=""  placeholder="Телефон" required/>
+        </div>
+        <div class="input_place">
+            <input   name=""  placeholder="Город " required/>
+        </div>
+        <div class="input_place">
+            <input     placeholder="Адрес " required/>
+        </div>
+        <div class="input_place">
+            <textarea   class="input_place_description" rows="4" cols="50" placeholder="Описание студии " required></textarea>
+        </div>
+        
+        <div class="lessonsmoreconfirm"  onclick="location.href='#'">
+            <div class="lessonsmoreconfirmtxt">Продолжить</div>
+            
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+    </div>
+
+    <div class="footer">
+        <a class="et-hero-tab" href="#"><img class="mainimg" src="../images/categories/main2.png" >Главная</a>
+        <a class="et-hero-tab" href="#"><img class="mainimg" src="../images/categories/studio2.png" >Студии</a>
+        <a class="et-hero-tab" href="#"><img class="mainimg" src="../images/categories/ticket2.png" >Абонемент</a>
+        <a class="et-hero-tab" href="#"><img class="mainimg" src="../images/categories/profile2.png" >Профиль</a>
+    </div>
+</body>
+<script>
+    function checkForm() {
+        var inputs = document.querySelectorAll('input, textarea');
+        for (var i = 0; i < inputs.length; i++) {
+            if (!inputs[i].checkValidity()) {
+                alert('Пожалуйста, заполните все поля!');
+                return false;
+            }
+        }
+        return true;
+    }
+    document.querySelector('.lessonsmoreconfirm').addEventListener('click', function() {
+        if (checkForm()) {
+            
+            // Добавьте здесь код для отправки формы на сервер
+        }
+    });
+    
+</script>
+</html>
+<!-- <label>
+    <img src="/build/assets/user-77605e7f.png">
+    <input class="load-input" type="file" wire:model.live="avatar">
+</label> -->

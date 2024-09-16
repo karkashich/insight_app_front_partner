@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карусель из 3-х фото</title>
+<style>
+    .carousel {
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-image {
+        width: 300px;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    .left-btn {
+        left: 10px;
+    }
+
+    .right-btn {
+        right: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="carousel">
+    <div class="carousel-images">
+        <img class="carousel-image" src="photo1.jpg" alt="Photo 1">
+        <img class="carousel-image" src="photo2.jpg" alt="Photo 2">
+        <img class="carousel-image" src="photo3.jpg" alt="Photo 3">
+    </div>
+    <button class="carousel-btn left-btn" onclick="scrollCarousel(-1)">←</button>
+    <button class="carousel-btn right-btn" onclick="scrollCarousel(1)">→</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel-image');
+    const totalSlides = slides.length;
+
+    function scrollCarousel(direction) {
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        const offset = -currentIndex * 300; // Ширина изображения
+
+        document.querySelector('.carousel-images').style.transform = `translateX(${offset}px)`;
+    }
+</script>
+</body>
+</html>

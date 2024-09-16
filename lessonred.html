@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='utf-8'>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+          }
+        body{
+
+            background-color: #fff;
+            margin: 0px;
+            width: 100%;
+            align-items: center;
+        }
+        
+
+
+
+        .content{
+            z-index: 950 ;
+            position: absolute;
+            margin-top: 7vh;
+            justify-content: center;
+            align-items: center;
+            width: 89.7vw;
+            height: 80vh;
+            left: 50%;
+            transform: translate(-50%);
+            font-family: 'Montserrat';
+        
+        }
+        .lessonsmore{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .lessonsmorename{
+            font-size: 6.5vw;
+            font-weight: 300;
+            text-align: center;
+            width: 70vw;
+            align-items: center;
+            justify-content: center;
+        }
+        .lessonsmorestudio{
+            justify-content: center;
+            display: flex;
+            font-size: 3vw;
+            align-items: center;
+            margin-top: 0.5vh;
+        }
+        
+        .lessonsmoreinfo{
+            display: inline-flex;
+            margin-top: 2vh;
+
+        }
+
+
+
+        input{
+            background-color: #ffffff00;
+            border: #67645E solid 0.25vw;
+            border-radius: 50vw;
+            font-size: 2.5vh;
+            font-family: "Montserrat";
+            font-weight: 300;
+            color: #67645E;
+            width: 78.9vw;
+            height: 4vh;
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+        input::placeholder{
+            padding-left: 0vw;
+            border: none;
+        }
+        input:focus{
+            outline: none;
+            
+        }
+        .input_place{
+            margin-top: 2.5vh;
+            display:block;
+            justify-content: center;
+        }    
+        .input_place_description{
+            width: 100%;
+            padding: 4vw;
+            border-radius: 2vh;
+            margin-top: 2.5vh;
+            height: 20vh;
+            display:block;
+            font-family: Montserrat;
+            font-size: 2.5vh;
+        }  
+        textarea:focus{
+            outline: none;
+        } 
+        textarea::placeholder{
+            padding: 0.75vw;
+            border: none;
+            font-weight: 300;
+        }
+        textarea{
+            width: 100%;
+            box-sizing: border-box;
+            color: #67645E;
+            font-weight: 300;
+        }
+       
+
+        .describetxt{
+            margin-left: 5vw;
+            margin-top: 2vh;
+            margin-bottom: -1vh;
+            font-size: 2vh;
+        } 
+        .back_btn{
+            position: absolute;
+            z-index: 999;
+            margin-top: 7.5vh;
+            left: 7.5vw;
+        }
+        .footer {
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 13vh;
+            background-color: #fff;
+            z-index: 999;
+            font-size: 3vw;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            backdrop-filter: blur(4px); 
+        }
+        a {
+            text-decoration: none;
+        }
+        .et-hero-tab {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            color: #67645E;
+            margin-top: 4vh;
+        }
+        .mainimg{
+            position: absolute;
+            height: 4vh;
+            margin-top: -7vh;
+            
+        }
+        
+        .checkbox{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2vh;
+            width: 89.7vw;
+            margin-left: 0;
+            }
+            label{
+                margin: 0  auto;
+                display: inline;
+                width: 69.7vw;
+                margin-left: 5vw;
+                align-items: center;
+                font-size: 2vh;
+            }
+            input[type=checkbox] {
+                background-color:#7B8F74; 
+                color: #7B8F74;
+                border: #7B8F74;
+                width: 15vw;
+            }
+            input[type=checkbox]:checked {
+                background-color:#7B8F74; 
+                color: #7B8F74;
+                border: #7B8F74;
+                width: 15vw;
+            } 
+            .weekdaylabel{
+                text-align: center;
+                align-items: center;
+                font-size: 2vh;
+            }
+            .prostaya{
+                font-size: 2vh;
+            }
+            .lessonsmoreconfirm{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 89.7vw;
+                
+                background-color: #7B8F74;
+                color: #ffffff;
+                border-radius: 50vw;
+                align-items: center;
+                border: none;
+                font-size: 5vw;
+                margin-top: 3.5vh;
+                font-family: Montserrat;
+            }
+        
+    </style>
+    
+</head>
+
+<body>
+       
+    <div class="back_btn" onclick="location.href='#'">
+        <img src="images/back_btn.svg" alt="back">
+    </div>
+    <div class="content">
+
+
+        <div class="lessonsmore">
+            <div>
+                <div class="lessonsmorename">Редактирование занятия</div>
+                <div class="lessonsmorestudio"></div>
+            </div>
+        </div>
+
+        <form id="myForm">
+            
+            <div class="input_place">
+                <input   name=""  placeholder="Название" required/>
+            </div>
+            
+            <div class="input_place">
+                <textarea   class="input_place_description" rows="4" cols="50" placeholder="Описание занятия" required></textarea>
+            </div>
+
+            <div class="input_place">
+                <input   name=""  placeholder="Адрес проведения занятия" required/>
+            </div>
+
+            <div class="input_place">
+                <input  type="number"   placeholder="Стоимость (в рублях) " maxlength="6" required/>
+            </div>
+            
+            <div class="input_place">
+                <input  type="number"   placeholder="Количество участников " maxlength="4" required/>
+            </div>
+            <div class="describetxt">Начало занятия</div>
+            <div class="input_place">
+                <input  type="time"   placeholder=" " maxlength="4" required/>
+            </div>
+            <div class="describetxt">Окончание занятия</div>
+            <div class="input_place">
+                <input  type="time"   placeholder=" " maxlength="4" required/>
+            </div>
+            <div class="describetxt">Дата проведения</div>
+            <div class="input_place">
+                <input  type="date"   placeholder=" " maxlength="4" required/>
+            </div>
+
+            <div class="checkbox">
+                <label class="prostaya" for="prostaya">Повторять каждую неделю?</label>
+                <input type="checkbox" id="prostaya" name="taxSystem" onclick="showDaysOfWeekCheckboxes()">
+            </div>
+            <div id="daysOfWeekCheckboxes"></div>
+            <input type="submit" class="lessonsmoreconfirm" value="Сохранить изменения">
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+    </div>
+
+    <div class="footer">
+        <a class="et-hero-tab" href="#"><img class="mainimg" src="images/categories/main2.png" >Главная</a>
+        <a class="et-hero-tab" href="#"><img class="mainimg" src="images/categories/studio2.png" >Студии</a>
+        <a class="et-hero-tab" href="#"><img class="mainimg" src="images/categories/ticket2.png" >Абонемент</a>
+        <a class="et-hero-tab" href="#"><img class="mainimg" src="images/categories/profile2.png" >Профиль</a>
+    </div>
+
+
+
+    <script>
+        function showDaysOfWeekCheckboxes() {
+            const checkboxContainer = document.getElementById('daysOfWeekCheckboxes');
+            checkboxContainer.innerHTML = ''; // Очищаем контейнер перед добавлением новых чекбоксов
+            
+            if (document.getElementById('prostaya').checked) {
+                const daysOfWeek = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+                
+                daysOfWeek.forEach(day => {
+                    const checkbox = document.createElement('div');
+                    checkbox.innerHTML = `
+                        <input type="checkbox" id="${day}" name="daysOfWeek" value="${day}">
+                        <label for="${day}" class="weekdaylabel">${day}</label><br>`;
+                    
+                    checkboxContainer.appendChild(checkbox);
+                });
+                // Добавляем поле для ввода даты
+                const dateInputContainer = document.getElementById('daysOfWeekCheckboxes');
+                dateInputContainer.innerHTML += `
+                    <br>   
+                    <label for="date" class="weekdaylabel" >Дата окончания повторений:</label>
+                    
+                    <input type="date" class="input_place" id="date" name="dateInput" style="margin-bottom: 1vh;">
+                `;
+            } else {
+                document.getElementById('daysOfWeekCheckboxes').innerHTML = ''; // Очищаем поле ввода при отключенном чекбоксе
+            }
+        }
+    </script>
+   
+</html>
