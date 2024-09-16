@@ -1,0 +1,1 @@
+# insight_app_front_partner
